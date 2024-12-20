@@ -20,6 +20,6 @@ export class AlbumService {
     this.i++;
   }
   getAll():Album[] {
-    return this.albums.filter(value => value.archived==0)
+    return this.albums.map(value => value.archived==0)
   }
 }
