@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <h3>Add new album</h3>
+    </div>
+    <div class="row">
+        <form [formGroup]="album">
+            <div class="mb-3">
+                <label>Album Title :</label>
+                <input type="text" class="form-control" formControlName="title">
+                <div class="alert alert-danger" *ngIf="album.get('title')!.invalid 
+                && (album.get('title')!.touched||album.get('title')!.dirty)">
+                    <div *ngIf="album.get('title')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('title')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Album creationDate :</label>
+                <input type="date" class="form-control" formControlName="creationDate">
+                <div class="alert alert-danger" *ngIf="album.get('creationDate')!.invalid 
+                && (album.get('creationDate')!.touched||album.get('creationDate')!.dirty)">
+                    <div *ngIf="album.get('title')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('title')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Album Title :</label>
+                <input class="form-control" formControlName="title">
+                <div class="alert alert-danger" *ngIf="album.get('title')!.invalid 
+                && (album.get('title')!.touched||album.get('title')!.dirty)">
+                    <div *ngIf="album.get('title')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('title')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Album Title :</label>
+                <input class="form-control" formControlName="title">
+                <div class="alert alert-danger" *ngIf="album.get('title')!.invalid 
+                && (album.get('title')!.touched||album.get('title')!.dirty)">
+                    <div *ngIf="album.get('title')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('title')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

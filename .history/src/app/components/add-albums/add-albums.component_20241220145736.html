@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <h3>Add new album</h3>
+    </div>
+    <div class="row">
+        <form [formGroup]="album">
+            <div class="mb-3">
+                <label>Album Title :</label>
+                <input type="text" class="form-control" formControlName="title">
+                <div class="alert alert-danger" *ngIf="album.get('title')!.invalid 
+                && (album.get('title')!.touched||album.get('title')!.dirty)">
+                    <div *ngIf="album.get('title')!.hasError('required')">
+                        album Title is required</div>
+                    <div *ngIf="album.get('title')!.hasError('pattern')">
+                        album Title invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Album archived :</label>
+                <input type="checkbox" class="form-control" formControlName="archived">
+            </div>
+            <div class="mb-3">
+                <label>Album coverPicture :</label>
+                <input type="text" class="form-control" formControlName="coverPicture">
+                <div class="alert alert-danger" *ngIf="album.get('coverPicture')!.invalid 
+                && (album.get('coverPicture')!.touched||album.get('coverPicture')!.dirty)">
+                    <div *ngIf="album.get('coverPicture')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('coverPicture')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Album coverPicture :</label>
+                <input (change)="updateFiles($event)" type="file"  multiple class="form-control" formControlName="coverPicture">
+                <div class="alert alert-danger" *ngIf="album.get('coverPicture')!.invalid 
+                && (album.get('coverPicture')!.touched||album.get('coverPicture')!.dirty)">
+                    <div *ngIf="album.get('coverPicture')!.hasError('required')">
+                        album number is required</div>
+                    <div *ngIf="album.get('coverPicture')!.hasError('pattern')">
+                        album number invalid</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button  type="sumbit" value="Submit" class="btn btn-outline-success" (click)="add()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
